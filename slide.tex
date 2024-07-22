@@ -78,11 +78,12 @@ subsubsectionstyle=show/shaded/hide]
             The mathematical model used to describe the pathophysiology of edema formation was proposed in a previous work [49]. This model includes the inflammatory part which describes the interaction between a pathogen and the human immune system.
             
             The pathogen is modelled by:
-            
+            \begin{equation}
             \left\{\begin{matrix}
              \frac{d(\phi_fC_b)}{dt}=-r_b+q_b,~t\in(0,10]\\
              C_b(0) = \delta_b,
             \end{matrix}\right.
+            \end{equation}
 
             where 
             
@@ -106,11 +107,13 @@ subsubsectionstyle=show/shaded/hide]
         \end{minipage}
         \begin{minipage}{0.4\linewidth}
             The leukocyte differential model is represented by:
-            
+
+            \begin{equation}
             \left\{\begin{matrix}
              \frac{d(\phi_fC_n)}{dt}=-r_n+q_n,~t\in(0,10]\\
              C_b(0) = 0
             \end{matrix}\right.
+            \end{equation}
 
             where 
             
@@ -124,6 +127,14 @@ subsubsectionstyle=show/shaded/hide]
         \end{minipage}
     \end{frame}
 
+    \begin{frame}[fragile]{Mathematical model}
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.8\linewidth]{pic/phase_plane.png}
+            \caption{Phase plane for the system of equations.}
+            \label{fig:phase-plane}
+        \end{figure}
+    \end{frame}
 
 \subsection{Physics-Informed Neural Networks (PINN)}
  

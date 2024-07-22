@@ -72,24 +72,58 @@ subsubsectionstyle=show/shaded/hide]
              \animategraphics[width = 0.9\linewidth, autoplay, loop]{2}%frame rate
             {anims/Chemotaxis}%path to figures
             {1}%start index
-            {57
-
-}%end index
+            {57}%end index
         \end{minipage}
         \begin{minipage}{0.4\linewidth}
-            The adjusted error and speedup are defined respectively by Equations \ref{eq:aj-error} and \ref{eq:aj-speed}.
-    
-            \begin{equation}\label{eq:aj-error}
-                E_{aj} = RMSE + RSE_{max}
+            The mathematical model used to describe the pathophysiology of edema formation was proposed in a previous work [49]. This model includes the inflammatory part which describes the interaction between a pathogen and the human immune system.
+            
+            The pathogen is modelled by:
+            
+            \left\{\begin{matrix}
+             \frac{d(\phi_fC_b)}{dt}=-r_b+q_b,~t\in(0,10]\\
+             C_b(0) = \delta_b,
+            \end{matrix}\right.
+
+            where 
+            
+            \begin{equation}
+                q_b = c_b C_b
             \end{equation}
-    
-            \begin{equation}\label{eq:aj-speed}
-                S_{aj} = \left< S \right>_{av} - \sigma_s
+
+            \begin{equation}
+                r_b = \lambda_{nb}C_nC_b
             \end{equation}
-    
-            where $RMSE$ stands for Root Mean Squared Error and $S$ is the speed up.
         \end{minipage}
     \end{frame}
+
+    \begin{frame}[fragile]{Mathematical model}
+        \begin{minipage}{0.55\linewidth}
+            \centering % \includegraphics{}
+             \animategraphics[width = 0.9\linewidth, autoplay, loop]{2}%frame rate
+            {anims/Chemotaxis}%path to figures
+            {1}%start index
+            {57}%end index
+        \end{minipage}
+        \begin{minipage}{0.4\linewidth}
+            The leukocyte differential model is represented by:
+            
+            \left\{\begin{matrix}
+             \frac{d(\phi_fC_n)}{dt}=-r_n+q_n,~t\in(0,10]\\
+             C_b(0) = 0
+            \end{matrix}\right.
+
+            where 
+            
+            \begin{equation}
+                q_n = \gamma_nC_b(C_{n,max}-C_n)
+            \end{equation}
+
+            \begin{equation}
+                r_b = \lambda_{bn}C_nC_b+\mu_nC_n
+            \end{equation}
+        \end{minipage}
+    \end{frame}
+
 
 \subsection{Physics-Informed Neural Networks (PINN)}
  
@@ -116,7 +150,7 @@ subsubsectionstyle=show/shaded/hide]
     \end{equation}
     
     \begin{equation}
-        \gamma [u]=0,~t\in[0,T],~x\in\partial\Omega
+        \beta [u]=0,~t\in[0,T],~x\in\partial\Omega
     \end{equation}
 
     This formulation enables us to define the PDE residuals as follows:
@@ -140,7 +174,7 @@ subsubsectionstyle=show/shaded/hide]
     \end{equation}
 
     \begin{equation}
-        \textit{L}_{bc}(\theta )=\frac{1}{N_{bc}}\sum^{N_{bc}}_{i=1}\sqrt{\gamma[u_\theta](t^{i}_{bc},x^i_{bc})^2}
+        \textit{L}_{bc}(\theta )=\frac{1}{N_{bc}}\sum^{N_{bc}}_{i=1}\sqrt{\beta[u_\theta](t^{i}_{bc},x^i_{bc})^2}
     \end{equation}
 
     \begin{equation}

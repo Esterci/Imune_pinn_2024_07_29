@@ -75,7 +75,7 @@ subsubsectionstyle=show/shaded/hide]
             {57}%end index
         \end{minipage}
         \begin{minipage}{0.4\linewidth}
-            The mathematical model used to describe the pathophysiology of edema formation was proposed in a previous work [49]. This model includes the inflammatory part which describes the interaction between a pathogen and the human immune system.
+            The mathematical model used to describe the pathophysiology of edema formation was proposed in a previous work \cite{reis2019mathematical,reis2019personalized}. This model includes the inflammatory part which describes the interaction between a pathogen and the human immune system.
             
             The pathogen is modelled by:
             \begin{equation}
@@ -148,7 +148,7 @@ subsubsectionstyle=show/shaded/hide]
 \end{frame}
 
 \begin{frame}[fragile]{Physics-Informed Neural Networks (PINN)}
-    In alignment with the foriginal formulation of Raissi et al., we generaly consider PDEs taking the form
+    In alignment with the foriginal formulation of Raissi et al. \cite{raissi2019physics}, we generaly consider PDEs taking the form
     
     \begin{equation}
         \frac{\partial u}{\partial t} + \Phi[u] = 0,~t\in [0,T],~x \in \Omega
@@ -255,11 +255,23 @@ subsubsectionstyle=show/shaded/hide]
         \end{minipage}
     \end{frame}
 \subsection{PINN and NN comparison}
+
 \begin{frame}[fragile]{PINN and NN comparison}
 
     \begin{figure}
         \centering
-        \includegraphics[width=0.77\linewidth]{pic/conc_curve_plot.png}
+        \includegraphics[width=0.95\linewidth]{pic/learning_curves.png}
+        \caption{Learning curves for the NN and PINN training.}
+        \label{fig:enter-label}
+    \end{figure}
+
+\end{frame}
+
+\begin{frame}[fragile]{PINN and NN comparison}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.95\linewidth]{pic/conc_curve_plot.png}
         \caption{Concentration curves for the different computational models}
         \label{fig:enter-label}
     \end{figure}
@@ -269,7 +281,7 @@ subsubsectionstyle=show/shaded/hide]
 \begin{frame}[fragile]{PINN and NN comparison}
     \begin{figure}
         \centering
-        \includegraphics[width=0.6\linewidth]{pic/conc_heat_plot.png}
+        \includegraphics[width=0.95\linewidth]{pic/conc_heat_plot.png}
         \caption{Concentration heat-map for the different computational models}
         \label{fig:enter-label}
     \end{figure}
@@ -287,7 +299,7 @@ subsubsectionstyle=show/shaded/hide]
         \cline{1-5}
         Model & RMSE        & $RSE_{max}$ & Mean speed up              & Speed up Standard Deviation \\ \cline{1-5}
         PINN  & 0.001530657 & 0.0080879815   & \multirow{2}{*}{5.9304240} & \multirow{2}{*}{0.96761669} \\
-        NN    & 0.1530657   & 0.80879815     &                            &                            
+        NN    & 0.11618373   & 0.14936338     &                            &                            
         \end{tabular}
         \end{table}
 

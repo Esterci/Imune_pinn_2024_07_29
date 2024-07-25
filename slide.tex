@@ -19,7 +19,7 @@
 \author{Thiago E. Fernandes, Marcelo Lobosco, Rodrigo W. dos Santos}
 \title{First Insights into PINNs for Accelerating Immune Response Models}
 \institute{
-    Postgraduate in Computational Modeling \\
+    Graduate Program in Computational Modelling \\
     Federal University of Juiz de Fora
 }
 \date{\small \today}
@@ -122,7 +122,7 @@ subsubsectionstyle=show/shaded/hide]
             \end{equation}
 
             \begin{equation}
-                r_b = \lambda_{bn}C_nC_b+\mu_nC_n
+                r_n = \lambda_{bn}C_nC_b+\mu_nC_n
             \end{equation}
         \end{minipage}
     \end{frame}
@@ -148,7 +148,7 @@ subsubsectionstyle=show/shaded/hide]
 \end{frame}
 
 \begin{frame}[fragile]{Physics-Informed Neural Networks (PINN)}
-    In alignment with the foriginal formulation of Raissi et al. \cite{raissi2019physics}, we generaly consider PDEs taking the form
+    In alignment with the original formulation of Raissi et al. \cite{raissi2019physics}, we generally consider PDEs taking the form
     
     \begin{equation}
         \frac{\partial u}{\partial t} + \Phi[u] = 0,~t\in [0,T],~x \in \Omega
@@ -189,7 +189,7 @@ subsubsectionstyle=show/shaded/hide]
     \end{equation}
 
     \begin{equation}
-        \textit{L}_{r}(\theta )=\frac{1}{N_{r}}\sum^{N_{r}}_{i=1}\sqrt{(\zeta_\theta(t^i_{r},x^i_{bc})^2}
+        \textit{L}_{r}(\theta )=\frac{1}{N_{r}}\sum^{N_{r}}_{i=1}\sqrt{(\zeta_\theta(t^i_{r},x^i_{r})^2}
     \end{equation}
 
     \begin{equation}
@@ -298,7 +298,7 @@ subsubsectionstyle=show/shaded/hide]
         \begin{tabular}{ccccc}
         \cline{1-5}
         Model & RMSE        & $RSE_{max}$ & Mean speed up              & Speed up Standard Deviation \\ \cline{1-5}
-        PINN  & 0.001530657 & 0.0080879815   & \multirow{2}{*}{5.9304240} & \multirow{2}{*}{0.96761669} \\
+        PINN  & 0.001530657 & 0.0080879815   & \multirow{2}{*}{5.93} & \multirow{2}{*}{0.97} \\
         NN    & 0.11618373   & 0.14936338     &                            &                            
         \end{tabular}
         \end{table}

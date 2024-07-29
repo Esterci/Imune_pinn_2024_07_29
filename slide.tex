@@ -63,6 +63,24 @@ subsectionstyle=show/shaded/hide,
 subsubsectionstyle=show/shaded/hide]
 \end{frame}
 
+\section{Introduction}
+ 
+\begin{frame}[fragile]{Introduction}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.9\linewidth]{pic/previous_work.png}
+        \label{fig:pinn-selection}
+    \end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{Introduction}
+    \begin{itemize}
+        \item In 2017, more than 3 million people were affected by this Myocarditis worldwide, causing about 47,000 deaths \cite{lourencco2022poroelastic};
+        \item Simulating the edema formation and  its consequences is a costly task;
+        \item In this work we apply Physics Informed Neural Networks (PINN) to adress this issue;
+    \end{itemize}
+\end{frame}
+
 \section{Problem Formulation}
 
 \subsection{Mathematical model}
@@ -75,7 +93,7 @@ subsubsectionstyle=show/shaded/hide]
             {57}%end index
         \end{minipage}
         \begin{minipage}{0.4\linewidth}
-            The mathematical model used to describe the pathophysiology of edema formation was proposed in a previous work \cite{reis2019mathematical,reis2019personalized}. This model includes the inflammatory part which describes the interaction between a pathogen and the human immune system.
+            The mathematical model used to describe the pathophysiology of edema formation was proposed in a previous work \cite{lourencco2022poroelastic}. This model includes the inflammatory part which describes the interaction between a pathogen and the human immune system.
             
             The pathogen is modelled by:
             \begin{equation}
@@ -127,14 +145,14 @@ subsubsectionstyle=show/shaded/hide]
         \end{minipage}
     \end{frame}
 
-    \begin{frame}[fragile]{Mathematical model}
-        \begin{figure}
-            \centering
-            \includegraphics[width=0.8\linewidth]{pic/phase_plane.png}
-            \caption{Phase plane for the system of equations.}
-            \label{fig:phase-plane}
-        \end{figure}
-    \end{frame}
+    %\begin{frame}[fragile]{Mathematical model}
+    %    \begin{figure}
+    %        \centering
+    %        \includegraphics[width=0.8\linewidth]{pic/phase_plane.png}
+    %        \caption{Phase plane for the system of equations.}
+    %        \label{fig:phase-plane}
+    %    \end{figure}
+    %\end{frame}
 
 \subsection{Physics-Informed Neural Networks (PINN)}
  
@@ -256,16 +274,16 @@ subsubsectionstyle=show/shaded/hide]
     \end{frame}
 \subsection{PINN and NN comparison}
 
-\begin{frame}[fragile]{PINN and NN comparison}
+%\begin{frame}[fragile]{PINN and NN comparison}
 
-    \begin{figure}
-        \centering
-        \includegraphics[width=0.95\linewidth]{pic/learning_curves.png}
-        \caption{Learning curves for the NN and PINN training.}
-        \label{fig:enter-label}
-    \end{figure}
+%    \begin{figure}
+%        \centering
+%        \includegraphics[width=0.95\linewidth]{pic/learning_curves.png}
+%        \caption{Learning curves for the NN and PINN training.}
+%        \label{fig:enter-label}
+%    \end{figure}
 
-\end{frame}
+%\end{frame}
 
 \begin{frame}[fragile]{PINN and NN comparison}
 
@@ -281,7 +299,7 @@ subsubsectionstyle=show/shaded/hide]
 \begin{frame}[fragile]{PINN and NN comparison}
     \begin{figure}
         \centering
-        \includegraphics[width=0.95\linewidth]{pic/conc_heat_plot.png}
+        \includegraphics[width=0.87\linewidth]{pic/conc_heat_plot.png}
         \caption{Concentration heat-map for the different computational models}
         \label{fig:enter-label}
     \end{figure}
@@ -299,9 +317,21 @@ subsubsectionstyle=show/shaded/hide]
         \cline{1-5}
         Model & RMSE        & $RSE_{max}$ & Mean speed up              & Speed up Standard Deviation \\ \cline{1-5}
         PINN  & 0.001530657 & 0.0080879815   & \multirow{2}{*}{5.93} & \multirow{2}{*}{0.97} \\
-        NN    & 0.11618373   & 0.14936338     &                            &                            
+        NN    & 0.094564412 & 0.11761788     &                            &                            
         \end{tabular}
         \end{table}
+
+\end{frame}
+
+\section{Future Works}
+
+\begin{frame}[fragile]{Future Works}
+
+    \begin{itemize}
+        \item Implement the 2D and 3D models;
+        \item Apply PINNs to the coupled mechanical model;
+        \item Explore the PINN's up-scaling capacities;
+    \end{itemize}
 
 \end{frame}
 
